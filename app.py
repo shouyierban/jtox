@@ -27,7 +27,7 @@ def main(wh_url, chat_id, proxy_url, lua_url):
     # 读取 event 文件内容
     with open(event_path, 'r') as event_file:
         payload = json.load(event_file)
-
+    print(payload)
     # 检查是否有 script 字段
     if "script" not in payload:
         print("No script field in payload.")
