@@ -1,11 +1,11 @@
 function main(splash, args)
     splash:go("https://www.foodieguide.com/iptvsearch/")
-    assert(splash:wait(2))
+    assert(splash:wait(5))
     local f_page = splash:select("body > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div:nth-child(2) > span:nth-child(2) > a"):info()["attributes"]["href"]
     --return f_page
   	local full_url = "https://www.foodieguide.com/iptvsearch/"..f_page
     splash:go(full_url)
-    assert(splash:wait(2))
+    assert(splash:wait(3))
     --return splash:png()
     local charge_port = splash:select('body > div:nth-child(3) > div.tables > div > div:nth-child(3) > div'):text()
     --return charge_port
@@ -16,7 +16,7 @@ function main(splash, args)
         --return port_url
         local full_port_url = "https://www.foodieguide.com/iptvsearch/"..port_url
         splash:go(full_port_url)
-        assert(splash:wait(15))
+        assert(splash:wait(17))
         --return splash:png()
 
         local iptv_list = {}
