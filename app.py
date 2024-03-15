@@ -16,10 +16,17 @@ import sys
 import json
 
 def main(wh_url, chat_id, proxy_url, lua_url):
-    # 从 stdin 中读取 payload
-    # payload = json.loads(sys.stdin.read())
-    with open('payload.json', 'r') as f:
-        payload = json.load(f)
+    # 读取 GITHUB_EVENT_PATH 环境变量，该文件包含了 event 的 payload 数据
+    event_path = os.getenv('GITHUB_EVENT_PATH')
+    
+    # 如果环境变量不存在或者文件路径为空，输出错误信息并退出
+    if not event_path:
+        print("GITHUB_EVENT_PATH environment variable is not set.")
+        exit(1)
+    
+    # 读取 event 文件内容
+    with open(event_path, 'r') as event_file:
+        payload = json.load(event_file)
 
     # 检查是否有 script 字段
     if "script" not in payload:
