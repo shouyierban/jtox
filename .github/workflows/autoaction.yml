@@ -39,7 +39,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements
       - name: AppPy
-        id:app_py
+          id:app_py
         run: python3 app.py
       - name: Run
         run: |
@@ -53,7 +53,7 @@ jobs:
              echo "random_number=0" >> $GITHUB_OUTPUT
           fi
       - name: Commit
-        id:commit
+          id:commit
         if: ${{ success() }}
         env:
           GIT_NAME: GitHub Actions
@@ -66,7 +66,7 @@ jobs:
             git commit -m "Github action update at `date '+%Y-%m-%d %H:%M:%S'`."
           fi
       - name: Push
-        id:push
+          id:push
         if: ${{ success() }}
         uses: ad-m/github-push-action@master
         with:
