@@ -1,0 +1,2 @@
+DrissionPage==4.0.4.12
+requests==2.28.2

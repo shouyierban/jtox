@@ -1,0 +1,79 @@
+name: misstaker
+
+on:
+  # schedule:
+  #   - cron: '30 5 * * *'
+  repository_dispatch:
+    types:
+      - refresh
+  workflow_dispatch:
+env: # Or as an environment variable
+  PROXY_URL: ${{ secrets.PROXY_URL }}
+  WH_URL: ${{ secrets.WH_URL }}
+  LUA_RUL: ${{ secrets.LUA_RUL }}
+  CHAT_ID: ${{ secrets.CHAT_ID }}
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+      - name: build pip cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/run_in_Actions/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: Set timezone
+        run: sudo timedatectl set-timezone 'Asia/Shanghai'
+      - name: Install requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements
+      - name: AppPy
+        id:app_py
+        run: python3 app.py
+      - name: Run
+        run: |
+          date
+          ls -ltr
+          if [ -f ./srct/miss.txt ]; then
+             echo  "File exists"
+             echo "random_number=1" >> $GITHUB_OUTPUT
+          else
+             echo "File does not exist"
+             echo "random_number=0" >> $GITHUB_OUTPUT
+          fi
+      - name: Commit
+        id:commit
+        if: ${{ success() }}
+        env:
+          GIT_NAME: GitHub Actions
+          GIT_EMAIL: actions@github.com
+        run: |
+          if [ -f ./srct/miss.txt ]; then
+            git config --local user.name $GIT_NAME
+            git config --local user.email $GIT_EMAIL
+            git add miss.txt
+            git commit -m "Github action update at `date '+%Y-%m-%d %H:%M:%S'`."
+          fi
+      - name: Push
+        id:push
+        if: ${{ success() }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+
+      # - name: CallBacks
+      #   id:callback
+      #   if: ${{ always() }}
+      #   run:python3 callback.py
