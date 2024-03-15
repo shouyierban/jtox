@@ -53,12 +53,12 @@ jobs:
           if [ $SENT_INFO = miss ]; then 
             git config --local user.name $GIT_NAME
             git config --local user.email $GIT_EMAIL
-            git add miss.txt
+            git add -A
             git commit -m "update miss at `date '+%Y-%m-%d %H:%M:%S'`."
           elif [ $SENT_INFO = lives ]; then
             git config --local user.name $GIT_NAME
             git config --local user.email $GIT_EMAIL
-            git add tvshows.m3u8
+            git add -A
             git commit -m "update lives at `date '+%Y-%m-%d %H:%M:%S'`."
           fi
       - name: Push
