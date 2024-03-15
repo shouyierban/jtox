@@ -47,20 +47,12 @@ jobs:
         env:
           GIT_NAME: GitHub Actions
           GIT_EMAIL: actions@github.com
-          SENT_INFO: ${{ github.event.client_payload.script }}
         run: |
           cd srct
-          if [ $SENT_INFO = miss ]; then 
-            git config --local user.name $GIT_NAME
-            git config --local user.email $GIT_EMAIL
-            git add -A
-            git commit -m "update miss at `date '+%Y-%m-%d %H:%M:%S'`."
-          elif [ $SENT_INFO = lives ]; then
-            git config --local user.name $GIT_NAME
-            git config --local user.email $GIT_EMAIL
-            git add -A
-            git commit -m "update lives at `date '+%Y-%m-%d %H:%M:%S'`."
-          fi
+          git config --local user.name $GIT_NAME
+          git config --local user.email $GIT_EMAIL
+          git add -A
+          git commit -m "update miss at `date '+%Y-%m-%d %H:%M:%S'`."
       - name: Push
           id:push
         if: ${{ success() }}

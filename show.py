@@ -112,9 +112,10 @@ def shows(wh_url, chat_id, lua_url):
 
     splash_url = lua_url + f'lua_source={quote(lua_script)}'
     # 发送请求
-    resp = requests.get(splash_url,timeout=45)
+    resp = requests.get(splash_url,timeout=60)
     result = resp.text
     st_code = resp.status_code
+    print(st_code)
     down_data = json.loads(result)
     # 整理格式
     tv_list = simple_out(down_data)

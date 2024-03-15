@@ -27,7 +27,7 @@ def call_back_info(wh_url, chat_id):
             else:
                 m3u_name = parts[0].strip()
                 if len(m3u_name) > 20:
-                    m3u_name = m3u_name[:20] + '……'
+                    m3u_name = m3u_name[:18] + '……'
                 message_text += f'\n🔸{m3u_name}'
     params = {
         "chat_id": chat_id,
