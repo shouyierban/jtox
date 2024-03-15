@@ -102,7 +102,10 @@ def save_data(m3u_content, filename):
         file.write(m3u_content)
 
 def miss_main(proxy_url, wh_url, chat_id):
-    # proxy_url = os.environ.get("PROXY_URL", "")
+    p_url = proxy_url
+    ddi = chat_id
+
+    print('==url:%s\n==ddi:%s\n'%(p_url, ddi))
 
     print('======txt更新开始=======')
     tv_list = get_list(proxy_url)
