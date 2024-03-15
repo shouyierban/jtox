@@ -17,7 +17,9 @@ import json
 
 def main(wh_url, chat_id, proxy_url, lua_url):
     # 从 stdin 中读取 payload
-    payload = json.loads(sys.stdin.read())
+    # payload = json.loads(sys.stdin.read())
+    with open('payload.json', 'r') as f:
+        payload = json.load(f)
 
     # 检查是否有 script 字段
     if "script" not in payload:
