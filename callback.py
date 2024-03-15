@@ -36,12 +36,12 @@ def call_back_info(wh_url, chat_id):
         "text": message_text
     }
 
-    # page = SessionPage(timeout=5)
-    # page.post(url=wh_url, params=params)
-    # code_info = page.response
-    # re_code = code_info.status_code
-    resp = requests.post(url=wh_url, params=params)
-    re_code = resp.status_code
+    page = SessionPage(timeout=5)
+    page.post(url=wh_url, params=params)
+    code_info = page.response
+    re_code = code_info.status_code
+    # resp = requests.post(url=wh_url, params=params)
+    # re_code = resp.status_code
     if re_code == 200:
         print('=====回复发送成功=====')
     else:
