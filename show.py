@@ -146,7 +146,7 @@ def shows(wh_url, chat_id, lua_url):
     }
     page = requests.post(url=wh_url, params=params)
     cb_code = page.status_code
-    if cb_code == 204:
+    if cb_code == 200:
         print('=====发送成功=====')
     else:
         print('=====发送失败(状态码: %s)=====' % cb_code)

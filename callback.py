@@ -12,6 +12,7 @@
 from DrissionPage import SessionPage
 import os
 import datetime
+import requests
 
 def call_back_info(wh_url, chat_id):
     now_time = datetime.datetime.now()
@@ -35,12 +36,13 @@ def call_back_info(wh_url, chat_id):
         "text": message_text
     }
 
-    page = SessionPage(timeout=5)
-    page.post(url=wh_url, params=params)
-    r = page.response
-    re_code = r.status_code
-
-    if re_code == 204:
+    # page = SessionPage(timeout=5)
+    # page.post(url=wh_url, params=params)
+    # code_info = page.response
+    # re_code = code_info.status_code
+    resp = requests.post(url=wh_url, params=params)
+    re_code = resp.status_code
+    if re_code == 200:
         print('=====回复发送成功=====')
     else:
         print('=====回复发送失败(状态码: %s)=====' % re_code)
