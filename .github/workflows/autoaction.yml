@@ -70,6 +70,8 @@ jobs:
             fi
           elif [ $SENT_INFO = lives ]; then
             if [ -f tvshows.m3u8 ]; then
+              echo  "File exists"
+              echo "random_number=1" >> $GITHUB_OUTPUT
               git config --local user.name $GIT_NAME
               git config --local user.email $GIT_EMAIL
               git add tvshows.m3u8
@@ -84,7 +86,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
 
-      # - name: CallBacks
-      #   id:callback
-      #   if: ${{ always() }}
-      #   run:python3 callback.py

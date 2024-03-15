@@ -1,6 +1,6 @@
 function main(splash, args)
     splash:go("https://www.foodieguide.com/iptvsearch/")
-    assert(splash:wait(5))
+    assert(splash:wait(6))
     local f_page = splash:select("body > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div:nth-child(2) > span:nth-child(2) > a"):info()["attributes"]["href"]
     --return f_page
   	local full_url = "https://www.foodieguide.com/iptvsearch/"..f_page

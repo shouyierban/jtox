@@ -107,10 +107,6 @@ def save_data(m3u_content, filename):
         file.write(m3u_content)
 
 def shows(wh_url, chat_id, lua_url):
-    # wh_url = os.environ.get("WH_URL", "")
-    # chat_id = os.environ.get("CHAT_ID", "")
-    # prox_url = os.environ.get("LUA_RUL", "")
-    # 读取 Lua 脚本文件
     with open('list.lua', 'r', encoding='utf-8') as file:
         lua_script = file.read()
 
