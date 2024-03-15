@@ -116,7 +116,7 @@ def shows(wh_url, chat_id, lua_url):
 
     splash_url = lua_url + f'lua_source={quote(lua_script)}'
     # 发送请求
-    resp = requests.get(splash_url,timeout=50)
+    resp = requests.get(splash_url,timeout=45)
     result = resp.text
     st_code = resp.status_code
     down_data = json.loads(result)
