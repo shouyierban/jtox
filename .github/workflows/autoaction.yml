@@ -41,17 +41,6 @@ jobs:
       - name: AppPy
           id:app_py
         run: python3 app.py
-      # - name: Run
-      #   run: |
-      #     date
-      #     ls -ltr
-      #     if [ -f ./srct/miss.txt ]; then
-      #        echo  "File exists"
-      #        echo "random_number=1" >> $GITHUB_OUTPUT
-      #     else
-      #        echo "File does not exist"
-      #        echo "random_number=0" >> $GITHUB_OUTPUT
-      #     fi
       - name: Commit
           id:commit
         if: ${{ success() }}
@@ -62,21 +51,15 @@ jobs:
         run: |
           cd srct
           if [ $SENT_INFO = miss ]; then 
-            if [ -f miss.txt ]; then
-              git config --local user.name $GIT_NAME
-              git config --local user.email $GIT_EMAIL
-              git add miss.txt
-              git commit -m "update miss at `date '+%Y-%m-%d %H:%M:%S'`."
-            fi
+            git config --local user.name $GIT_NAME
+            git config --local user.email $GIT_EMAIL
+            git add miss.txt
+            git commit -m "update miss at `date '+%Y-%m-%d %H:%M:%S'`."
           elif [ $SENT_INFO = lives ]; then
-            if [ -f tvshows.m3u8 ]; then
-              echo  "File exists"
-              echo "random_number=1" >> $GITHUB_OUTPUT
-              git config --local user.name $GIT_NAME
-              git config --local user.email $GIT_EMAIL
-              git add tvshows.m3u8
-              git commit -m "update lives at `date '+%Y-%m-%d %H:%M:%S'`."
-            fi
+            git config --local user.name $GIT_NAME
+            git config --local user.email $GIT_EMAIL
+            git add tvshows.m3u8
+            git commit -m "update lives at `date '+%Y-%m-%d %H:%M:%S'`."
           fi
       - name: Push
           id:push
