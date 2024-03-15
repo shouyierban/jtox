@@ -116,7 +116,7 @@ def shows(wh_url, chat_id, lua_url):
 
     splash_url = lua_url + f'lua_source={quote(lua_script)}'
     # 发送请求
-    resp = requests.get(splash_url,timeout=50)
+    resp = requests.get(splash_url,timeout=45)
     result = resp.text
     st_code = resp.status_code
     down_data = json.loads(result)
@@ -129,7 +129,7 @@ def shows(wh_url, chat_id, lua_url):
     # 发送回复信息
     now_time = datetime.datetime.now()
     now_time_str = now_time.strftime("%Y-%m-%d %H:%M:%S")
-    if st_code == 204:
+    if st_code == 200:
         callback_message = (
             '🔊已经成功更新了iptv列表\n'
             f'🕣更新时间: {now_time_str}\n'

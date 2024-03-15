@@ -16,18 +16,18 @@ import datetime
 def call_back_info(wh_url, chat_id):
     now_time = datetime.datetime.now()
     now_time_str = now_time.strftime("%Y-%m-%d %H:%M:%S")
-    message_text = f'🔞New list: {now_time_str}\n'
+    message_text = f'🔞New list: {now_time_str}'
     with open('./srct/miss.txt', 'r', encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             parts = line.split(',')
             if 'genre' in line:
                 channel_genre = parts[0].strip()
-                message_text += f'\n📬from: {channel_genre}\n'
+                message_text += f'\n\n📬from: {channel_genre}\n'
             else:
                 m3u_name = parts[0].strip()
                 if len(m3u_name) > 20:
-                    m3u_name = m3u_name[:15] + '……'
+                    m3u_name = m3u_name[:20] + '……'
                 message_text += f'\n🔸{m3u_name}'
     params = {
         "chat_id": chat_id,
