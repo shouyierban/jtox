@@ -124,7 +124,7 @@ def shows(de_url, tv_url, lua_url, wh_url, chat_id):
     check_online = page.eles('xpath://div[contains(@class,"result")][1]/div[3]/div')[0].text
     if '失效' not in check_online:
         f_url_page = page.eles('xpath://div[contains(@class,"result")][1]/div[1]/a/@href')[0]
-        f_url = base_url + f_url_page
+        f_url = tv_url + f_url_page
         print('====进入lua阶段====')
         l_script = f'''
         function main(splash, args)
@@ -175,7 +175,7 @@ def shows(de_url, tv_url, lua_url, wh_url, chat_id):
         '''
         splash_url = lua_url + f'lua_source={quote(l_script)}'
         # 发送请求
-        resp = requests.get(splash_url,timeout=30)
+        resp = requests.get(splash_url,timeout=40)
         result = resp.text
         st_code = resp.status_code
         print('===lua结束：%s==='%st_code)
