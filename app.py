@@ -15,7 +15,7 @@ import os
 import sys
 import json
 
-def main(wh_url, chat_id, proxy_url, lua_url):
+def main(de_url, tv_url, wh_url, chat_id, proxy_url, lua_url):
     event_path = os.getenv('GITHUB_EVENT_PATH')
     if not event_path:
         print("GITHUB_EVENT_PATH variable is not set.")
@@ -33,7 +33,7 @@ def main(wh_url, chat_id, proxy_url, lua_url):
                 miss_main(proxy_url, wh_url, chat_id)
                 
             elif keywords == "lives":
-                shows(wh_url, chat_id, lua_url)
+                shows(de_url, tv_url, lua_url, wh_url, chat_id)
             else:
                 print("Invalid keywords option.")
         else:
@@ -48,5 +48,7 @@ if __name__ == "__main__":
     chat_id = os.environ.get("CHAT_ID", "")
     lua_url = os.environ.get("LUA_RUL", "")
     proxy_url = os.environ.get("PROXY_URL", "")
-    main(wh_url, chat_id, proxy_url, lua_url)
+    de_url = os.environ.get("DE_RUL", "")
+    tv_url = os.environ.get("TV_RUL", "")
+    main(de_url, tv_url, wh_url, chat_id, proxy_url, lua_url)
 
