@@ -12,14 +12,14 @@ env: # Or as an environment variable
   WH_URL: ${{ secrets.WH_URL }}
   LUA_RUL: ${{ secrets.LUA_RUL }}
   CHAT_ID: ${{ secrets.CHAT_ID }}
-  
+  DE_RUL: ${{ secrets.DE_RUL }}
+  TV_RUL: ${{ secrets.TV_RUL }}
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -47,12 +47,17 @@ jobs:
         env:
           GIT_NAME: GitHub Actions
           GIT_EMAIL: actions@github.com
+          SENT_INFO: ${{ github.event.client_payload.script }}
         run: |
           cd srct
           git config --local user.name $GIT_NAME
           git config --local user.email $GIT_EMAIL
           git add -A
-          git commit -m "update miss at `date '+%Y-%m-%d %H:%M:%S'`."
+          if [ $SENT_INFO = miss ]; then
+            git commit -m "update miss at `date '+%Y-%m-%d %H:%M:%S'`."
+          elif [ $SENT_INFO = lives ]; then
+            git commit -m "update tvshows at `date '+%Y-%m-%d %H:%M:%S'`."
+          fi
       - name: Push
           id:push
         if: ${{ success() }}
