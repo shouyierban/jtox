@@ -85,7 +85,7 @@ def get_list(proxy_url):
             for _ in range(2):
                 num_vid = random.randint(1, 11)        
                 name_list = page.eles('xpath://div[contains(@class,"my-2")]/a/text()')[num_vid].strip()
-                url_list = page.eles('xpath://div[contains(@class,"my-2")]/a/@href')[num_vid]
+                url_list = page.eles('xpath://div[contains(@class,"my-2")]/a/@href')[num_vid].strip()
                 
                 if url_list:
                     if url == tokey_url:
