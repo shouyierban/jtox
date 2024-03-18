@@ -26,6 +26,7 @@ def convert_to_m3u(tv_list):
         # 解析频道名称和链接以及分类
         parts = line.split(',')
         channel_name = parts[0].strip()
+        channel_name_logo = channel_name.replace('_HD', '')
         channel_url = parts[1].strip()
         if 'genre' in line:
             channel_genre = parts[2].replace('#genre#=', '').strip()
@@ -33,7 +34,7 @@ def convert_to_m3u(tv_list):
             channel_genre = 'Other'
         
         # 构建m3u格式的频道条目，将频道分类名称写入group-title字段
-        tvg_logo = f'https://live.zhoujie218.top/taibiao/{channel_name}.png'
+        tvg_logo = f'https://live.zhoujie218.top/taibiao/{channel_name_logo}.png'
         m3u_entry = f'#EXTINF:-1 group-title="{channel_genre}" tvg-name="{channel_name}" tvg-logo="{tvg_logo}",{channel_name}\n{channel_url}\n'
         m3u_content += m3u_entry  
     # print(f'转换文件成功！')
