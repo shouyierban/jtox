@@ -19,37 +19,37 @@ http://171.116.4.147:8005/rtp/226.0.2.13:8016
 http://171.116.4.147:8005/rtp/226.0.2.14:8024
 #EXTINF:-1 group-title="Local" tvg-name="山西社会与法治" tvg-logo="https://live.zhoujie218.top/taibiao/山西社会与法治.png",山西社会与法治
 http://171.116.4.147:8005/rtp/226.0.2.15:8032
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV1_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV1_HD.png",CCTV1_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV1_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV1.png",CCTV1_HD
 http://171.116.4.147:8005/rtp/226.0.2.153:9136
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV2_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV2_HD.png",CCTV2_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV2_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV2.png",CCTV2_HD
 http://171.116.4.147:8005/rtp/226.0.2.154:9144
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV3_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV3_HD.png",CCTV3_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV3_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV3.png",CCTV3_HD
 http://171.116.4.147:8005/rtp/226.0.2.208:9576
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV4_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV4_HD.png",CCTV4_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV4_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV4.png",CCTV4_HD
 http://171.116.4.147:8005/rtp/226.0.2.156:9160
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV5_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV5_HD.png",CCTV5_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV5_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV5.png",CCTV5_HD
 http://171.116.4.147:8005/rtp/226.0.2.209:9584
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV6_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV6_HD.png",CCTV6_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV6_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV6.png",CCTV6_HD
 http://171.116.4.147:8005/rtp/226.0.2.210:9592
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV7_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV7_HD.png",CCTV7_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV7_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV7.png",CCTV7_HD
 http://171.116.4.147:8005/rtp/226.0.2.159:9184
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV8_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV8_HD.png",CCTV8_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV8_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV8.png",CCTV8_HD
 http://171.116.4.147:8005/rtp/226.0.2.211:9600
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV9_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV9_HD.png",CCTV9_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV9_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV9.png",CCTV9_HD
 http://171.116.4.147:8005/rtp/226.0.2.161:9200
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV10_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV10_HD.png",CCTV10_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV10_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV10.png",CCTV10_HD
 http://171.116.4.147:8005/rtp/226.0.2.162:9208
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV12_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV12_HD.png",CCTV12_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV12_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV12.png",CCTV12_HD
 http://171.116.4.147:8005/rtp/226.0.2.164:9224
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV13_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV13_HD.png",CCTV13_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV13_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV13.png",CCTV13_HD
 http://171.116.4.147:8005/rtp/226.0.2.165:9232
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV14_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV14_HD.png",CCTV14_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV14_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV14.png",CCTV14_HD
 http://171.116.4.147:8005/rtp/226.0.2.166:9240
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV5+_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV5+_HD.png",CCTV5+_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV5+_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV5+.png",CCTV5+_HD
 http://171.116.4.147:8005/rtp/226.0.2.168:9256
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV16_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV16_HD.png",CCTV16_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV16_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV16.png",CCTV16_HD
 http://171.116.4.147:8005/rtp/226.0.2.169:9264
-#EXTINF:-1 group-title="CCTV" tvg-name="CCTV17_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV17_HD.png",CCTV17_HD
+#EXTINF:-1 group-title="CCTV" tvg-name="CCTV17_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV17.png",CCTV17_HD
 http://171.116.4.147:8005/rtp/226.0.2.170:9272
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV1" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV1.png",CCTV1
 http://171.116.4.147:8005/rtp/226.0.2.16:8040
