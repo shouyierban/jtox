@@ -138,7 +138,7 @@ def z_list(page):
     page = SessionPage()
     page.get(url)
     resp = page.response
-    print('zp:' + resp.status_code)
+    print('zp:' + str(resp.status_code))
     z_name = page.eles('xpath://div[@class="post video_9s"]/div/h3/a/text()')
     z_url = page.eles('xpath://div[@class="post video_9s"]/div/h3/a/@href')
     z_data = []
@@ -148,7 +148,7 @@ def z_list(page):
         pz_url = z_url[vio_mun]
         page.get(pz_url)
         z_resp = page.response
-        print('zfp:' + z_resp.status_code)
+        print('zfp:' + str(z_resp.status_code))
 
         z_code = page.eles("xpath://script/text()")
         z_code_str = ''
