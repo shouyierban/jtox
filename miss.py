@@ -228,7 +228,7 @@ def get_list(proxy_url, pl_url, de_url):
         for _ in range(4):
             z_num = random.randint(1, 75)
             z_data = z_list(de_url, z_num)
-            for key, value in data:
+            for key, value in z_data:
                 z_name = key
                 z_url = value
                 z_url = z_url + ',#genre#=Z-东京'
