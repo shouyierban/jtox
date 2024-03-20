@@ -131,6 +131,31 @@ def pig_m3u(purl):
     pig_matcher = re.search(pig_pattern, pig_shadow_root)
     pig_url = pig_matcher.group(1)
     return pig_url
+    
+def z_list(page):
+    page_num = page
+    url =  'https://18av.mm-cg.com/zh/uncensored_makersr/29/Tokyo%20Hot%20(%E6%9D%B1%E4%BA%AC%E7%86%B1)/{0}.html'.format(page_num)
+    page = SessionPage()
+    page.get(url)
+    z_name = page.eles('xpath://div[@class="post video_9s"]/div/h3/a/text()')
+    z_url = page.eles('xpath://div[@class="post video_9s"]/div/h3/a/@href')
+    z_data = []
+    for _ in range(0, 3):
+        vio_mun = random.randint(1, 24)
+        fz_name = z_name[vio_mun]
+        pz_url = z_url[vio_mun]
+        page.get(pz_url)
+        z_code = page.eles("xpath://script/text()")[3]
+        z_code = str(z_code)
+        z_code = z_code[-1700:-400]
+        # print(z_code)
+        pattern = r'id=880_*_(\w+)"'
+        matche_code = re.search(pattern, z_code)
+        fz_code = matche_code.group(1).split('_')
+        fz_code_combin = f'{fz_code[0]}' + '/' + f'{fz_code[1]}' + '/' + f'{fz_code[1]}'
+        fz_url = 'https://v.imgstream2.com/' + fz_code_combin + '.m3u8'
+        z_data.append(f'{fz_name}, {fz_url}')
+    return z_data
 
 def get_list(proxy_url, pl_url):
     data_list = []
@@ -177,6 +202,16 @@ def get_list(proxy_url, pl_url):
                 f_pig_url = f_pig_url + ',#genre#=PIG-国产'
                 data_list.append(f'{pig_name}, {f_pig_url}')
                 # print(pig_name + ',' + f_pig_url + '\n')
+    # 添加18tv
+    for _ in range(4):
+        z_num = random.randint(1, 75)
+        z_data = z_list(z_num)
+        for z_adrr in z_data:
+            z_name = z_adrr[0]
+            z_url = z_adrr[1]
+            z_url = z_url + ',#genre#=Z-东京'
+            data_list.append(f'{z_name}, {z_url}')
+    
     return data_list
 
 def save_data(m3u_content, filename):
