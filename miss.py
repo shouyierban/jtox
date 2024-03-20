@@ -143,7 +143,7 @@ def z_list(proxy, page):
     z_url = page.eles('xpath://div[@class="post video_9s"]/div/h3/a/@href')
     z_data = []
     for _ in range(0, 3):
-        vio_mun = random.randint(1, 24)
+        vio_mun = random.randint(1, 10)
         fz_name = z_name[vio_mun]
         pz_url = proxy + z_url[vio_mun]
         page.get(pz_url)
