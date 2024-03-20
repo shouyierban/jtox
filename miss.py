@@ -155,7 +155,7 @@ def z_list(proxy, page):
         for z_code_text in z_code:
             z_code_str += str(z_code_text)
         z_code_str = z_code_str[-3000:]
-        print(z_code)
+        # print(z_code)
         pattern = r'id=880_*_(\w+)"'
         matche_code = re.findall(pattern, z_code_str)
         if matche_code:
