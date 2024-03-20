@@ -157,8 +157,11 @@ def z_list(page):
         z_code_str = z_code_str[-4000:]
         # print(z_code)
         pattern = r'id=880_*_(\w+)"'
-        matche_code = re.search(pattern, z_code_str)
-        fz_code = matche_code.group(1).split('_')
+        matche_code = re.findall(pattern, z_code_str)
+        if matches:
+            fz_code = matche_code[0].split('_')
+        else:
+            print("fz_code未匹配")
         fz_code_combin = f'{fz_code[0]}' + '/' + f'{fz_code[1]}' + '/' + f'{fz_code[1]}'
         fz_url = 'https://v.imgstream2.com/' + fz_code_combin + '.m3u8'
         z_data.append(f'{fz_name}, {fz_url}')
