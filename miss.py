@@ -145,12 +145,14 @@ def z_list(page):
         fz_name = z_name[vio_mun]
         pz_url = z_url[vio_mun]
         page.get(pz_url)
-        z_code = page.eles("xpath://script/text()")[3]
-        z_code = str(z_code)
-        z_code = z_code[-1700:-400]
+        z_code = page.eles("xpath://script/text()")
+        z_code_str = ''
+        for z_code_text in z_code:
+            z_code_str += str(z_code_text)
+        z_code_str = z_code_str[-2500:-300]
         # print(z_code)
         pattern = r'id=880_*_(\w+)"'
-        matche_code = re.search(pattern, z_code)
+        matche_code = re.search(pattern, z_code_str)
         fz_code = matche_code.group(1).split('_')
         fz_code_combin = f'{fz_code[0]}' + '/' + f'{fz_code[1]}' + '/' + f'{fz_code[1]}'
         fz_url = 'https://v.imgstream2.com/' + fz_code_combin + '.m3u8'
