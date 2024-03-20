@@ -224,7 +224,7 @@ def get_list(proxy_url, pl_url, de_url):
     except Exception as e:
         print('pig错误' + e)
 
-    添加18tv========
+    # 添加18tv========
     try:
         for _ in range(4):
             z_num = random.randint(1, 75)
