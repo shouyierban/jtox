@@ -112,13 +112,13 @@ def pig_m3u(purl):
     page = SessionPage()
     page.get(url=purl, headers=headers)
     code_info = page.response
-    print(code_info.status_code)
+    # print(code_info.status_code)
     pig_script = page.eles("xpath://script/text()")
     elem_list = ''
     for elem in pig_script:
         elem = str(elem)
         elem_list += elem
-    elem_list = elem_list[-3800:-3000]
+    elem_list = elem_list[-4000:-1000]
     pattern = r"videojs\('video-(.*?)'"
     code_data = re.search(pattern, elem_list)
     ex_value = code_data.group(1)
