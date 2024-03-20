@@ -132,9 +132,9 @@ def pig_m3u(purl):
     pig_url = pig_matcher.group(1)
     return pig_url
     
-def z_list(page):
+def z_list(proxy, page):
     page_num = page
-    url =  'https://18av.mm-cg.com/zh/uncensored_makersr/29/Tokyo%20Hot%20(%E6%9D%B1%E4%BA%AC%E7%86%B1)/{0}.html'.format(page_num)
+    url =  proxy + 'https://18av.mm-cg.com/zh/uncensored_makersr/29/Tokyo%20Hot%20(%E6%9D%B1%E4%BA%AC%E7%86%B1)/{0}.html'.format(page_num)
     page = SessionPage()
     page.get(url)
     resp = page.response
@@ -145,7 +145,7 @@ def z_list(page):
     for _ in range(0, 3):
         vio_mun = random.randint(1, 24)
         fz_name = z_name[vio_mun]
-        pz_url = z_url[vio_mun]
+        pz_url = proxy + z_url[vio_mun]
         page.get(pz_url)
         z_resp = page.response
         print('zfp:' + str(z_resp.status_code))
@@ -223,7 +223,7 @@ def get_list(proxy_url, pl_url):
     try:
         for _ in range(4):
             z_num = random.randint(1, 75)
-            z_data = z_list(z_num)
+            z_data = z_list(proxy_url, z_num)
             for z_adrr in z_data:
                 z_name = z_adrr[0]
                 z_url = z_adrr[1]
