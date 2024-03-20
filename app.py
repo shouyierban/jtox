@@ -15,7 +15,7 @@ import os
 import sys
 import json
 
-def main(de_url, tv_url, wh_url, chat_id, proxy_url, lua_url):
+def main(de_url, tv_url, wh_url, chat_id, proxy_url, lua_url, pl_url):
     event_path = os.getenv('GITHUB_EVENT_PATH')
     if not event_path:
         print("GITHUB_EVENT_PATH variable is not set.")
@@ -30,7 +30,7 @@ def main(de_url, tv_url, wh_url, chat_id, proxy_url, lua_url):
             keywords = client_payload['script']
             # 根据 keywords 来执行命令
             if keywords == "miss":
-                miss_main(proxy_url, wh_url, chat_id)
+                miss_main(proxy_url, wh_url, chat_id, pl_url)
                 
             elif keywords == "lives":
                 shows(de_url, tv_url, lua_url, wh_url, chat_id)
@@ -50,5 +50,6 @@ if __name__ == "__main__":
     proxy_url = os.environ.get("PROXY_URL", "")
     de_url = os.environ.get("DE_RUL", "")
     tv_url = os.environ.get("TV_RUL", "")
-    main(de_url, tv_url, wh_url, chat_id, proxy_url, lua_url)
+    pl_url = os.environ.get("PL_URL", "")
+    main(de_url, tv_url, wh_url, chat_id, proxy_url, lua_url, pl_url)
 
