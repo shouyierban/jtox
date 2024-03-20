@@ -159,7 +159,7 @@ def z_list(page):
 
 def get_list(proxy_url, pl_url):
     data_list = []
-    for _ in range(8):
+    for _ in range(5):
         tokey_index = random.randint(150, 210)
         high_index = random.randint(10, 215)
         base_url = proxy_url
