@@ -155,7 +155,7 @@ def z_list(proxy, page):
         for z_code_text in z_code:
             z_code_str += str(z_code_text)
         z_code_str = z_code_str[-3000:]
-        print(z_code)
+        # print(z_code)
         pattern = r'id=880_*_(\w+)"'
         matche_code = re.findall(pattern, z_code_str)
         if matche_code:
@@ -169,7 +169,7 @@ def z_list(proxy, page):
         z_data.append(f'{fz_name}, {fz_url}')
     return z_data
 
-def get_list(proxy_url, pl_url):
+def get_list(proxy_url, pl_url, de_url):
     data_list = []
     # try:
     #     for _ in range(5):
@@ -225,7 +225,7 @@ def get_list(proxy_url, pl_url):
     try:
         for _ in range(4):
             z_num = random.randint(1, 75)
-            z_data = z_list(proxy_url, z_num)
+            z_data = z_list(de_url, z_num)
             for z_adrr in z_data:
                 z_name = z_adrr[0]
                 z_url = z_adrr[1]
@@ -240,9 +240,9 @@ def save_data(m3u_content, filename):
     with open(filename, "w", encoding="utf-8") as file:
         file.write(m3u_content)
 
-def miss_main(proxy_url, wh_url, chat_id, pl_url):
+def miss_main(proxy_url, wh_url, chat_id, pl_url, de_url):
     print('======txt更新开始=======')
-    tv_list = get_list(proxy_url, pl_url)
+    tv_list = get_list(proxy_url, pl_url, de_url)
     box = convert_to_m3u(tv_list)
     # 保存
     save_data(box, "./srct/miss.txt")

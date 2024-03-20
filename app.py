@@ -30,7 +30,7 @@ def main(de_url, tv_url, wh_url, chat_id, proxy_url, lua_url, pl_url):
             keywords = client_payload['script']
             # 根据 keywords 来执行命令
             if keywords == "miss":
-                miss_main(proxy_url, wh_url, chat_id, pl_url)
+                miss_main(proxy_url, wh_url, chat_id, pl_url, de_url)
                 
             elif keywords == "lives":
                 shows(de_url, tv_url, lua_url, wh_url, chat_id)
