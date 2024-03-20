@@ -64,8 +64,74 @@ def get_addr(proxy_url, url_page):
         f_rate = rate_data.group(1)
         url = 'https://surrit.com/' + f_code + '/' + f_rate + '/video.m3u8'
         return url
+    
+def pig_list(pl_url):
+    base_url = 'https://pigav.com/%e5%9c%8b%e7%94%a2av%e7%b7%9a%e4%b8%8a%e7%9c%8b'
+    l_script = f'''function main(splash, args)
+    assert(splash:go("{base_url}"))
+    assert(splash:wait(1))
+    local data_list = {{}}
+    for p = 1, 6 do
+        for i = 1, 2 do
+        local ram_num = math.random(1,20)
+        local page_list = splash:select('#post-514045 > div > div > section > div > div > div > div > div > section > div > div > article:nth-child(' .. ram_num .. ') > div.content > div > h2 > a'):text()
+        local page_url = splash:select('#post-514045 > div > div > section > div > div > div > div > div > section > div > div > article:nth-child(' .. ram_num .. ') > div.content > div > h2 > a'):info()["attributes"]["href"]
+        local data_info = {{
+            name = page_list,
+            purl = page_url
+        }}
+        table.insert(data_list, data_info)
+        end
+        local click_num = math.random(1,30)
+        for j = 1, click_num do
+        local next_bt = splash:select('#post-514045 > div > div > section > div > div > div > div > div > section > div > nav > a.next.page-numbers')
+        if next_bt then
+            next_bt: mouse_click()
+        else
+            break
+        end
+        end
+    end
+    
+    return {{
+        data = data_list
+    }}
+    end
+    '''
+    pigurl = pl_url + f'lua_source={quote(l_script)}'
+    page = SessionPage(timeout=35)
+    page.get(url=pigurl)
+    result = page.json
+    return result
 
-def get_list(proxy_url):
+def pig_m3u(purl):
+    headers = {
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
+    }
+    page = SessionPage()
+    page.get(url=purl, headers=headers)
+    code_info = page.response
+    print(code_info.status_code)
+    pig_script = page.eles("xpath://script/text()")
+    elem_list = ''
+    for elem in pig_script:
+        elem = str(elem)
+        elem_list += elem
+    elem_list = elem_list[-3800:-3000]
+    pattern = r"videojs\('video-(.*?)'"
+    code_data = re.search(pattern, elem_list)
+    ex_value = code_data.group(1)
+    # print(ex_value)
+
+    # 获取shadow_root
+    # pig_shadow_root = page.ele(f'css:#video-{ex_value}').html
+    pig_shadow_root = page.ele(f'css:#video-{ex_value}').inner_html
+    pig_pattern = r'src="(.*?)"'
+    pig_matcher = re.search(pig_pattern, pig_shadow_root)
+    pig_url = pig_matcher.group(1)
+    return pig_url
+
+def get_list(proxy_url, pl_url):
     data_list = []
     for _ in range(8):
         tokey_index = random.randint(150, 210)
@@ -94,7 +160,22 @@ def get_list(proxy_url):
                     elif url == high_url:
                         f_url =  get_addr(base_url, url_list) + ',#genre#=高妹'
                     data_list.append(f'{name_list}, {f_url}')
-                    # print(name_list + ',' + f_url)          
+                    # print(name_list + ',' + f_url)
+
+    # 添加pig列表========
+    pig_json = pig_list(pl_url)
+    if 'data' in pig_json:
+        full_data = pig_json['data']
+        # 解析JSON文件，获取name和url字段
+        for key, item in full_data.items():
+            if isinstance(item, dict):
+                pig_name = item.get('name')
+                pig_url = item.get('purl')
+                full_pig_url = proxy_url + pig_url
+                f_pig_url = pig_m3u(full_pig_url)
+                f_pig_url = f_pig_url + ',#genre#=PIG-国产'
+                data_list.append(f'{pig_name}, {f_pig_url}')
+                # print(pig_name + ',' + f_pig_url + '\n')
     return data_list
 
 def save_data(m3u_content, filename):
@@ -102,9 +183,9 @@ def save_data(m3u_content, filename):
     with open(filename, "w", encoding="utf-8") as file:
         file.write(m3u_content)
 
-def miss_main(proxy_url, wh_url, chat_id):
+def miss_main(proxy_url, wh_url, chat_id, pl_url):
     print('======txt更新开始=======')
-    tv_list = get_list(proxy_url)
+    tv_list = get_list(proxy_url, pl_url)
     box = convert_to_m3u(tv_list)
     # 保存
     save_data(box, "./srct/miss.txt")
@@ -115,4 +196,5 @@ if __name__ == '__main__':
     wh_url = os.environ.get("WH_URL", "")
     chat_id = os.environ.get("CHAT_ID", "")
     proxy_url = os.environ.get("PROXY_URL", "")
+    pl_url = os.environ.get("PL_URL", "")
     miss_main(proxy_url,)
