@@ -11,6 +11,7 @@
 # ----here put the import lib----
 
 from DrissionPage import SessionPage
+from urllib.parse import quote
 import random
 import re
 import os
