@@ -34,6 +34,14 @@ def main(de_url, tv_url, wh_url, chat_id, proxy_url, lua_url, pl_url):
                 
             elif keywords == "lives":
                 shows(de_url, tv_url, lua_url, wh_url, chat_id)
+
+            elif keywords == "bak":
+                if client_payload['data']:
+                    bak_text = client_payload['data']
+                    print(bak_text)
+                else:
+                    print('没有要收藏的内容')
+            
             else:
                 print("Invalid keywords option.")
         else:
