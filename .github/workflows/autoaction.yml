@@ -58,6 +58,8 @@ jobs:
             git commit -m "update miss at `date '+%Y-%m-%d %H:%M:%S'`."
           elif [ $SENT_INFO = lives ]; then
             git commit -m "update tvshows at `date '+%Y-%m-%d %H:%M:%S'`."
+          elif [ $SENT_INFO = add || $SENT_INFO = del ]; then
+            git commit -m "update bak at `date '+%Y-%m-%d %H:%M:%S'`."
           fi
       - name: Push
           id:push

@@ -11,6 +11,8 @@
 # ----here put the import lib----
 from miss import miss_main
 from show import shows
+from cllector import Cllector
+from callback import call_back_cllect
 import os
 import sys
 import json
@@ -35,10 +37,20 @@ def main(de_url, tv_url, wh_url, chat_id, proxy_url, lua_url, pl_url):
             elif keywords == "lives":
                 shows(de_url, tv_url, lua_url, wh_url, chat_id)
 
-            elif keywords == "bak":
+            elif keywords == "add":
                 if client_payload['data']:
-                    bak_text = client_payload['data']
-                    print(bak_text)
+                    add_text = client_payload['data']
+                    add_pro = Cllector(add_text)
+                    add_res = add_pro.bak_add()
+                    call_back_cllect(wh_url, chat_id, add_res, add_text, 'add')
+                else:
+                    print('没有要收藏的内容')
+            elif keywords == "del":
+                if client_payload['data']:
+                    add_text = client_payload['data']
+                    add_pro = Cllector(add_text)
+                    add_res = add_pro.bak_del()
+                    call_back_cllect(wh_url, chat_id, add_res, add_text, 'del')
                 else:
                     print('没有要收藏的内容')
             
