@@ -205,6 +205,27 @@ def jrate():
             fr_url = match_url.group(0)
         else:
             fr_url = None
+        if fr_url:
+            if 'index.m3u8' in fr_url:
+                end_url = fr_url
+            elif 'playlist.m3u8' in fr_url:
+                headers_m3u = {
+                    'referer': 'https://iframe.mediadelivery.net/',
+                    'sec-ch-ua': '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"',
+                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
+                }
+                resp = requests.get(url=fr_url, headers=headers_m3u)
+                url_info = resp.text               
+                lines = url_info.splitlines()
+                # 过滤出以 '#' 开头的行和空行
+                lines = [line for line in lines if not line.startswith('#') and line.strip()]
+                if lines:
+                    ppi = lines[-1]
+                    ppi = ppi.replace('1920x1080', '1080p')
+                    ppi = ppi.replace('1280x720', '720p')
+                    ppi = ppi.replace('640x360', '480p')
+                end_url = fr_url.replace('playlist.m3u8', ppi)
+        
         key, value = f_name, fr_url
         r_dict = {key: value}
         data.append(r_dict)
