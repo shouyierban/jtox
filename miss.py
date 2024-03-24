@@ -187,28 +187,27 @@ def jrate():
     r_name = page.eles('xpath://div[contains(@class, "col-md-4")]/div[2]/a/text()')
     page_url = page.eles('t:div@@class:col-md-4')
     data = []
-    for _ in range(4):
-        for _ in range(3):
-            vadio_num = random.randint(1, 19)
-            f_name = r_name[vadio_num].replace(';', '').strip()
-            f_name = f_name.replace(':', '')
-            page_url_full = page_url[vadio_num].ele("t:div@@class:text-truncate")('t:a').link
-            page.get(url=page_url_full, headers=headers)
-            scripts_text = page.eles("xpath://script/text()")
-            elem_list = ''
-            for elem in scripts_text:
-                elem = str(elem)
-                elem_list += elem
-            elem_list = elem_list[-2500:]        
-            pattern = r'https?://[^\s]+\.m3u8'
-            match_url = re.search(pattern, elem_list)
-            if match_url:
-                fr_url = match_url.group(0)
-            else:
-                fr_url = None
-            key, value = f_name, fr_url
-            r_dict = {key: value}
-            data.append(r_dict)
+    for _ in range(3):
+        vadio_num = random.randint(1, 19)
+        f_name = r_name[vadio_num].replace(';', '').strip()
+        f_name = f_name.replace(':', '')
+        page_url_full = page_url[vadio_num].ele("t:div@@class:text-truncate")('t:a').link
+        page.get(url=page_url_full, headers=headers)
+        scripts_text = page.eles("xpath://script/text()")
+        elem_list = ''
+        for elem in scripts_text:
+            elem = str(elem)
+            elem_list += elem
+        elem_list = elem_list[-2300:-600]       
+        pattern = r'https?://[^\s]+\.m3u8'
+        match_url = re.search(pattern, elem_list)
+        if match_url:
+            fr_url = match_url.group(0)
+        else:
+            fr_url = None
+        key, value = f_name, fr_url
+        r_dict = {key: value}
+        data.append(r_dict)
     return data
 
 def get_list(proxy_url, pl_url, de_url):
@@ -276,19 +275,20 @@ def get_list(proxy_url, pl_url, de_url):
                     data_list.append(f'{z_name}, {z_url}')
     except Exception as e:
         print('z错误:%s'%e)
-    return data_list
 
     # 添加jrate========
     try:
-        j_data = jrate()
-        for dictionary in j_data:
-            for key, value in dictionary.items():
-                j_name = key
-                j_url = value
-                j_url = z_url + ',#genre#=J-无码'
-                data_list.append(f'{j_name}, {j_url}')
+        for _ in range(4):
+            j_data = jrate()
+            for dictionary in j_data:
+                for key, value in dictionary.items():
+                    j_name = key
+                    j_url = value
+                    j_url = z_url + ',#genre#=J-无码'
+                    data_list.append(f'{j_name}, {j_url}')
     except Exception as e:
         print('j错误:%s'%e)
+
     return data_list
 
 def save_data(m3u_content, filename):
