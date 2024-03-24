@@ -198,10 +198,10 @@ def jrate():
         for elem in scripts_text:
             elem = str(elem)
             elem_list += elem
-        elem_list = elem_list[-2000:-600]
+        elem_list = elem_list[-1800:-600]
         print(elem_list)    
-        pattern = r'https://[^\s]+\.m3u8'
-        match_url = re.search(pattern, elem_list)
+        pattern = re.compile(r"url: '(.*.m3u8)',")
+        match_url = pattern.search(elem_list)
         if match_url:
             fr_url = match_url.group(1)
         else:
@@ -287,7 +287,7 @@ def get_list(proxy_url, pl_url, de_url):
                 for key, value in dictionary.items():
                     j_name = key
                     print(j_name + '\n')
-                    j_url = value
+                    j_url = value.scrip()
                     j_url = z_url + ',#genre#=Jrate'
                     data_list.append(f'{j_name}, {j_url}')
     except Exception as e:
