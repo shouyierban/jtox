@@ -191,7 +191,6 @@ def jrate():
         vadio_num = random.randint(1, 19)
         f_name = r_name[vadio_num].replace(';', '').strip()
         f_name = f_name.replace(':', '')
-        print(f_name)
         page_url_full = page_url[vadio_num].ele("t:div@@class:text-truncate")('t:a').link
         page.get(url=page_url_full, headers=headers)
         scripts_text = page.eles("xpath://script/text()")
@@ -200,7 +199,7 @@ def jrate():
             elem = str(elem)
             elem_list += elem
         elem_list = elem_list[-1800:-700]
-        pattern = re.compile("url\: \'(.*\.m3u8)\'")
+        pattern = re.compile("https:.*\.m3u8")
         match_url = pattern.search(elem_list)
         if match_url:
             fr_url = match_url.group(0)
@@ -281,19 +280,17 @@ def get_list(proxy_url, pl_url, de_url):
 
     # 添加jrate================================================
     try:
-        for _ in range(1):
+        for _ in range(2):
             j_data = jrate()
-            print(j_data)
             for dictionary in j_data:
                 for key, value in dictionary.items():
-                    j_name = key
-                    print(j_name + '\n')
-                    j_url = value.scrip()
+                    j_name = key.replace(' ', '_')
+                    j_url = value.strip()
                     j_url = z_url + ',#genre#=Jrate'
                     data_list.append(f'{j_name}, {j_url}')
     except Exception as e:
         print('j错误:%s'%e)
-
+    print(data_list)
     return data_list
 
 def save_data(m3u_content, filename):
