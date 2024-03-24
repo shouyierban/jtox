@@ -187,7 +187,7 @@ def jrate():
     r_name = page.eles('xpath://div[contains(@class, "col-md-4")]/div[2]/a/text()')
     page_url = page.eles('t:div@@class:col-md-4')
     data = []
-    for _ in range(1):
+    for _ in range(3):
         vadio_num = random.randint(1, 19)
         f_name = r_name[vadio_num].replace(';', '').strip()
         f_name = f_name.replace(':', '')
@@ -203,10 +203,8 @@ def jrate():
         match_url = pattern.search(elem_list)
         if match_url:
             fr_url = match_url.group(0)
-            print(fr_url)
         else:
             fr_url = None
-            print(fr_url)
         key, value = f_name, fr_url
         r_dict = {key: value}
         data.append(r_dict)
@@ -246,51 +244,50 @@ def get_list(proxy_url, pl_url, de_url):
     # except Exception as e:
     #     print('miss错误' + e)
 
-    # # 添加pig列表============================================
-    # try:
-    #     pig_json = pig_list(pl_url)
-    #     if 'data' in pig_json:
-    #         full_data = pig_json['data']
-    #         # 解析JSON文件，获取name和url字段
-    #         for key, item in full_data.items():
-    #             if isinstance(item, dict):
-    #                 pig_name = item.get('name')
-    #                 pig_url = item.get('purl')
-    #                 full_pig_url = proxy_url + pig_url
-    #                 f_pig_url = pig_m3u(full_pig_url)
-    #                 f_pig_url = f_pig_url + ',#genre#=PIG-国产'
-    #                 data_list.append(f'{pig_name}, {f_pig_url}')
-    #                 # print(pig_name + ',' + f_pig_url + '\n')
-    # except Exception as e:
-    #     print('pig错误' + e)
+    # 添加pig列表============================================
+    try:
+        pig_json = pig_list(pl_url)
+        if 'data' in pig_json:
+            full_data = pig_json['data']
+            # 解析JSON文件，获取name和url字段
+            for key, item in full_data.items():
+                if isinstance(item, dict):
+                    pig_name = item.get('name')
+                    pig_url = item.get('purl')
+                    full_pig_url = proxy_url + pig_url
+                    f_pig_url = pig_m3u(full_pig_url)
+                    f_pig_url = f_pig_url + ',#genre#=PIG-国产'
+                    data_list.append(f'{pig_name}, {f_pig_url}')
+                    # print(pig_name + ',' + f_pig_url + '\n')
+    except Exception as e:
+        print('pig错误' + e)
 
-    # # 添加18tv===============================================
-    # try:
-    #     for _ in range(4):
-    #         z_num = random.randint(1, 75)
-    #         z_data = z_list(de_url, z_num)
-    #         for dictionary in z_data:
-    #             for key, value in dictionary.items():
-    #                 z_name = key
-    #                 z_url = value
-    #                 z_url = z_url + ',#genre#=Z-东京'
-    #                 data_list.append(f'{z_name}, {z_url}')
-    # except Exception as e:
-    #     print('z错误:%s'%e)
+    # 添加18tv===============================================
+    try:
+        for _ in range(4):
+            z_num = random.randint(1, 75)
+            z_data = z_list(de_url, z_num)
+            for dictionary in z_data:
+                for key, value in dictionary.items():
+                    z_name = key
+                    z_url = value
+                    z_url = z_url + ',#genre#=Z-东京'
+                    data_list.append(f'{z_name}, {z_url}')
+    except Exception as e:
+        print('z错误:%s'%e)
 
     # 添加jrate================================================
     try:
-        for _ in range(2):
+        for _ in range(4):
             j_data = jrate()
             for dictionary in j_data:
                 for key, value in dictionary.items():
                     j_name = key.replace(' ', '_')
                     j_url = value.strip()
-                    j_url = z_url + ',#genre#=Jrate'
+                    j_url = j_url + ',#genre#=J-无码'
                     data_list.append(f'{j_name}, {j_url}')
     except Exception as e:
         print('j错误:%s'%e)
-    print(data_list)
     return data_list
 
 def save_data(m3u_content, filename):
