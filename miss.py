@@ -12,6 +12,7 @@
 
 from DrissionPage import SessionPage
 from urllib.parse import quote
+import requests
 import random
 import re
 import os
