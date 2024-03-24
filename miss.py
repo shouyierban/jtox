@@ -172,10 +172,48 @@ def z_list(proxy, page):
         # print(z_data)
     return z_data
 
+def jrate():
+    page_num = random.randint(0, 58)
+    r_url = 'https://www.javrate.com/menu/uncensored/5-2-{0}'.format(page_num)
+
+    headers = {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
+        'sec-ch-ua': '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"',
+    }
+
+    page = SessionPage(timeout=8)
+    page.get(url=r_url, headers=headers)
+    r_name = page.eles('xpath://div[contains(@class, "col-md-4")]/div[2]/a/text()')
+    page_url = page.eles('t:div@@class:col-md-4')
+    data = []
+    for _ in range(4):
+        for _ in range(3):
+            vadio_num = random.randint(1, 19)
+            f_name = r_name[vadio_num].replace(';', '').strip()
+            page_url_full = page_url[vadio_num].ele("t:div@@class:text-truncate")('t:a').link
+            page.get(url=page_url_full, headers=headers)
+            scripts_text = page.eles("xpath://script/text()")
+            elem_list = ''
+            for elem in scripts_text:
+                elem = str(elem)
+                elem_list += elem
+            elem_list = elem_list[-1800:-600]        
+            pattern = r'https?://[^\s]+\.m3u8'
+            match_url = re.search(pattern, elem_list)
+            if match_url:
+                fr_url = match_url.group(0)
+            else:
+                fr_url = None
+            key, value = f_name, fr_url
+            r_dict = {key: value}
+            data.append(r_dict)
+    return data
+
 def get_list(proxy_url, pl_url, de_url):
     data_list = []
     try:
-        for _ in range(5):
+        for _ in range(2):
             tokey_index = random.randint(150, 210)
             high_index = random.randint(10, 215)
             base_url = proxy_url
@@ -237,6 +275,19 @@ def get_list(proxy_url, pl_url, de_url):
                     data_list.append(f'{z_name}, {z_url}')
     except Exception as e:
         print('z错误:%s'%e)
+    return data_list
+
+    # 添加jrate========
+    try:
+        j_data = jrate()
+        for dictionary in j_data:
+            for key, value in dictionary.items():
+                j_name = key
+                j_url = value
+                j_url = z_url + ',#genre#=J-无码'
+                data_list.append(f'{j_name}, {j_url}')
+    except Exception as e:
+        print('j错误:%s'%e)
     return data_list
 
 def save_data(m3u_content, filename):
