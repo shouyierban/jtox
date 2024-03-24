@@ -191,6 +191,7 @@ def jrate():
         for _ in range(3):
             vadio_num = random.randint(1, 19)
             f_name = r_name[vadio_num].replace(';', '').strip()
+            f_name = f_name.replace(':', '')
             page_url_full = page_url[vadio_num].ele("t:div@@class:text-truncate")('t:a').link
             page.get(url=page_url_full, headers=headers)
             scripts_text = page.eles("xpath://script/text()")
@@ -198,7 +199,7 @@ def jrate():
             for elem in scripts_text:
                 elem = str(elem)
                 elem_list += elem
-            elem_list = elem_list[-1800:-600]        
+            elem_list = elem_list[-2500:]        
             pattern = r'https?://[^\s]+\.m3u8'
             match_url = re.search(pattern, elem_list)
             if match_url:
