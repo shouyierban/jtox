@@ -184,21 +184,26 @@ def jrate():
 
     page = SessionPage(timeout=8)
     page.get(url=r_url, headers=headers)
+    resp = page.response
+    print('jr:' + str(resp.status_code))
     r_name = page.eles('xpath://div[contains(@class, "col-md-4")]/div[2]/a/text()')
     page_url = page.eles('t:div@@class:col-md-4')
     data = []
-    for _ in range(3):
+    for _ in range(1):
         vadio_num = random.randint(1, 19)
         f_name = r_name[vadio_num].replace(';', '').strip()
         f_name = f_name.replace(':', '')
         page_url_full = page_url[vadio_num].ele("t:div@@class:text-truncate")('t:a').link
         page.get(url=page_url_full, headers=headers)
+        resp = page.response
+        print('jr_video:' + str(resp.status_code))
         scripts_text = page.eles("xpath://script/text()")
         elem_list = ''
         for elem in scripts_text:
             elem = str(elem)
             elem_list += elem
-        elem_list = elem_list[-2300:-600]       
+        # elem_list = elem_list[-2300:-600] 
+        print(elem_list)    
         pattern = r'https?://[^\s]+\.m3u8'
         match_url = re.search(pattern, elem_list)
         if match_url:
