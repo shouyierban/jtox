@@ -207,9 +207,9 @@ def jrate():
         else:
             fr_url = None
         if fr_url:
-            if 'index.m3u8' in fr_url:
+            if 'index' in fr_url:
                 end_url = fr_url
-            elif 'playlist.m3u8' in fr_url:
+            elif 'playlist' in fr_url:
                 headers_m3u = {
                     'referer': 'https://iframe.mediadelivery.net/',
                     'sec-ch-ua': '"Chromium";v="116", "Not)A;Brand";v="24", "Google Chrome";v="116"',
@@ -222,9 +222,12 @@ def jrate():
                 lines = [line for line in lines if not line.startswith('#') and line.strip()]
                 if lines:
                     ppi = lines[-1]
-                    ppi = ppi.replace('1920x1080', '1080p')
-                    ppi = ppi.replace('1280x720', '720p')
-                    ppi = ppi.replace('640x360', '480p')
+                    if '1920' in ppi:
+                        ppi = ppi.replace('1920x1080', '1080p')
+                    elif '1280' in ppi:
+                        ppi = ppi.replace('1280x720', '720p')
+                    else:
+                        ppi = ppi.replace('640x360', '480p')
                 end_url = fr_url.replace('playlist.m3u8', ppi)
         
         key, value = f_name, fr_url

@@ -31,7 +31,7 @@ def call_back_info(wh_url, chat_id):
                 if len(m3u_name) > 20:
                     m3u_name = m3u_name[:18] + '……'
                 message_text += f'\n🔸{m3u_name}'
-            if n >= 26:
+            if n >= 30:
                 message_text += f'\n\n🔸🔸其余省略…………🔸🔸'
                 break
 
