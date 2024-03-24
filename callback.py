@@ -18,7 +18,9 @@ def call_back_info(wh_url, chat_id):
     now_time_str = now_time.strftime("%Y-%m-%d %H:%M:%S")
     message_text = f'🔞New list: {now_time_str}'
     with open('./srct/miss.txt', 'r', encoding="utf-8") as f:
+        n = 0
         for line in f:
+            n += 1
             line = line.strip()
             parts = line.split(',')
             if 'genre' in line:
@@ -29,6 +31,10 @@ def call_back_info(wh_url, chat_id):
                 if len(m3u_name) > 20:
                     m3u_name = m3u_name[:18] + '……'
                 message_text += f'\n🔸{m3u_name}'
+            if n >= 26:
+                message_text += f'\n\n🔸🔸其余省略…………🔸🔸'
+                break
+
     params = {
         "chat_id": chat_id,
         "parse_mode": "markdown",

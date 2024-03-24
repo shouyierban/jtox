@@ -282,7 +282,7 @@ def get_list(proxy_url, pl_url, de_url):
             j_data = jrate()
             for dictionary in j_data:
                 for key, value in dictionary.items():
-                    j_name = key.replace(' ', '_')
+                    j_name = key.strip()
                     j_url = value.strip()
                     j_url = j_url + ',#genre#=J-无码'
                     data_list.append(f'{j_name}, {j_url}')
