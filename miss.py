@@ -188,7 +188,7 @@ def jrate():
     r_name = page.eles('xpath://div[contains(@class, "col-md-4")]/div[2]/a/text()')
     page_url = page.eles('t:div@@class:col-md-4')
     data = []
-    for _ in range(3):
+    for _ in range(1):
         vadio_num = random.randint(1, 19)
         f_name = r_name[vadio_num].replace(';', '').strip()
         f_name = f_name.replace(':', '')
@@ -216,14 +216,17 @@ def jrate():
                     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
                 }
                 resp = requests.get(url=fr_url, headers=headers_m3u)
-                url_info = resp.text               
+                url_info = resp.text
+                print('info =====\n' + url_info)
                 lines = url_info.splitlines()
                 # 过滤出以 '#' 开头的行和空行
                 lines = [line for line in lines if not line.startswith('#') and line.strip()]
                 if lines:
                     ppi = lines[-1]
+                    print('+++++last line:' + ppi)
                     if '1920' in ppi:
                         ppi = ppi.replace('1920x1080', '1080p')
+                        print('+++++ppi: ' + ppi)
                     elif '1280' in ppi:
                         ppi = ppi.replace('1280x720', '720p')
                     else:
@@ -270,40 +273,40 @@ def get_list(proxy_url, pl_url, de_url):
     #     print('miss错误' + e)
 
     # 添加pig列表============================================
-    try:
-        pig_json = pig_list(pl_url)
-        if 'data' in pig_json:
-            full_data = pig_json['data']
-            # 解析JSON文件，获取name和url字段
-            for key, item in full_data.items():
-                if isinstance(item, dict):
-                    pig_name = item.get('name')
-                    pig_url = item.get('purl')
-                    full_pig_url = proxy_url + pig_url
-                    f_pig_url = pig_m3u(full_pig_url)
-                    f_pig_url = f_pig_url + ',#genre#=PIG-国产'
-                    data_list.append(f'{pig_name}, {f_pig_url}')
-                    # print(pig_name + ',' + f_pig_url + '\n')
-    except Exception as e:
-        print('pig错误' + e)
+    # try:
+    #     pig_json = pig_list(pl_url)
+    #     if 'data' in pig_json:
+    #         full_data = pig_json['data']
+    #         # 解析JSON文件，获取name和url字段
+    #         for key, item in full_data.items():
+    #             if isinstance(item, dict):
+    #                 pig_name = item.get('name')
+    #                 pig_url = item.get('purl')
+    #                 full_pig_url = proxy_url + pig_url
+    #                 f_pig_url = pig_m3u(full_pig_url)
+    #                 f_pig_url = f_pig_url + ',#genre#=PIG-国产'
+    #                 data_list.append(f'{pig_name}, {f_pig_url}')
+    #                 # print(pig_name + ',' + f_pig_url + '\n')
+    # except Exception as e:
+    #     print('pig错误' + e)
 
-    # 添加18tv===============================================
-    try:
-        for _ in range(4):
-            z_num = random.randint(1, 75)
-            z_data = z_list(de_url, z_num)
-            for dictionary in z_data:
-                for key, value in dictionary.items():
-                    z_name = key
-                    z_url = value
-                    z_url = z_url + ',#genre#=Z-东京'
-                    data_list.append(f'{z_name}, {z_url}')
-    except Exception as e:
-        print('z错误:%s'%e)
+    # # 添加18tv===============================================
+    # try:
+    #     for _ in range(4):
+    #         z_num = random.randint(1, 75)
+    #         z_data = z_list(de_url, z_num)
+    #         for dictionary in z_data:
+    #             for key, value in dictionary.items():
+    #                 z_name = key
+    #                 z_url = value
+    #                 z_url = z_url + ',#genre#=Z-东京'
+    #                 data_list.append(f'{z_name}, {z_url}')
+    # except Exception as e:
+    #     print('z错误:%s'%e)
 
     # 添加jrate================================================
     try:
-        for _ in range(4):
+        for _ in range(2):
             j_data = jrate()
             for dictionary in j_data:
                 for key, value in dictionary.items():
