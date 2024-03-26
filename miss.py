@@ -317,9 +317,9 @@ def get_list(proxy_url, pl_url, de_url):
                     j_url = j_url + ',#genre#=J-无码'
                     data_list.append(f'{j_name}, {j_url}')
                 j += 1
-                if j >= 11:
-                    flag = True
-                    break
+            if j >= 12:
+                flag = True
+                break
     except Exception as e:
         print('j错误:%s'%e)
 
