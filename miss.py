@@ -206,11 +206,11 @@ def jrate():
             fr_url = match_url.group(0)
         else:
             fr_url = None
-        if fr_url:
-            if 'index' in fr_url:
-                end_url = fr_url
-            else:
-                break
+        # if fr_url:
+        #     if 'index' in fr_url:
+        #         end_url = fr_url
+        #     else:
+        #         break
             # elif 'playlist' in fr_url:
             #     headers_m3u = {
             #         'referer': 'https://iframe.mediadelivery.net/',
@@ -233,7 +233,7 @@ def jrate():
             #             ppi = ppi.replace('640x360', '480p')
             #     end_url = fr_url.replace('playlist.m3u8', ppi)
 
-        key, value = f_name, end_url
+        key, value = f_name, fr_url
         r_dict = {key: value}
         data.append(r_dict)
     return data
@@ -306,20 +306,14 @@ def get_list(proxy_url, pl_url, de_url):
 
     # 添加jrate==============================================
     try:
-        flag = False
-        while flag == False:
+        for _ in range(4):
             j_data = jrate()
-            j = 0
             for dictionary in j_data:
                 for key, value in dictionary.items():
                     j_name = key.strip()
                     j_url = value.strip()
                     j_url = j_url + ',#genre#=J-无码'
                     data_list.append(f'{j_name}, {j_url}')
-                j += 1
-            if j >= 12:
-                flag = True
-                break
     except Exception as e:
         print('j错误:%s'%e)
 
