@@ -174,7 +174,7 @@ def z_list(proxy, page):
     return z_data
 
 def jrate():
-    page_num = random.randint(0, 58)
+    page_num = random.randint(31, 58)
     r_url = 'https://www.javrate.com/menu/uncensored/5-2-{0}'.format(page_num)
 
     headers = {
@@ -188,7 +188,7 @@ def jrate():
     r_name = page.eles('xpath://div[contains(@class, "col-md-4")]/div[2]/a/text()')
     page_url = page.eles('t:div@@class:col-md-4')
     data = []
-    for _ in range(4):
+    for _ in range(3):
         vadio_num = random.randint(1, 19)
         f_name = r_name[vadio_num].replace(';', '').strip()
         f_name = f_name.replace(':', '')
@@ -304,24 +304,24 @@ def get_list(proxy_url, pl_url, de_url):
     except Exception as e:
         print('z错误:%s'%e)
 
-    # # 添加jrate==============================================
-    # try:
-    #     flag = False
-    #     while flag == False:
-    #         j_data = jrate()
-    #         j = 0
-    #         for dictionary in j_data:
-    #             for key, value in dictionary.items():
-    #                 j_name = key.strip()
-    #                 j_url = value.strip()
-    #                 j_url = j_url + ',#genre#=J-无码'
-    #                 data_list.append(f'{j_name}, {j_url}')
-    #             j += 1
-    #             if j >= 11:
-    #                 flag = True
-    #                 break
-    # except Exception as e:
-    #     print('j错误:%s'%e)
+    # 添加jrate==============================================
+    try:
+        flag = False
+        while flag == False:
+            j_data = jrate()
+            j = 0
+            for dictionary in j_data:
+                for key, value in dictionary.items():
+                    j_name = key.strip()
+                    j_url = value.strip()
+                    j_url = j_url + ',#genre#=J-无码'
+                    data_list.append(f'{j_name}, {j_url}')
+                j += 1
+                if j >= 11:
+                    flag = True
+                    break
+    except Exception as e:
+        print('j错误:%s'%e)
 
     return data_list
 
