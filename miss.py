@@ -219,7 +219,7 @@ def jrate():
 
 # 任务列表
 def addr_miss(data_list: list, proxy_url) -> None:
-    for _ in range(2):
+    for _ in range(4):
         try:
             tokey_index = random.randint(150, 210)
             high_index = random.randint(10, 215)
@@ -242,7 +242,7 @@ def addr_miss(data_list: list, proxy_url) -> None:
                 page = SessionPage(timeout=5)
                 page.get(url=url, headers=headers)
 
-                for _ in range(2):
+                for _ in range(3):
                     num_vid = random.randint(1, 11)
                     name_list = page.eles(
                         'xpath://div[contains(@class,"my-2")]/a/text()'
