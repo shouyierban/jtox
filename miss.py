@@ -240,37 +240,37 @@ def jrate():
 
 def get_list(proxy_url, pl_url, de_url):
     data_list = []
-    # try:
-    #     for _ in range(2):
-    #         tokey_index = random.randint(150, 210)
-    #         high_index = random.randint(10, 215)
-    #         base_url = proxy_url
-    #         tokey_url = base_url + 'https://missav.com/dm16/tokyohot?page={0}'.format(tokey_index)
-    #         high_url = base_url + 'https://missav.com/search/%E9%AB%98%E5%A6%B9?sort=released_at&page={0}'.format(high_index)
+    try:
+        for _ in range(2):
+            tokey_index = random.randint(150, 210)
+            high_index = random.randint(10, 215)
+            base_url = proxy_url
+            tokey_url = base_url + 'https://missav.com/dm16/tokyohot?page={0}'.format(tokey_index)
+            high_url = base_url + 'https://missav.com/search/%E9%AB%98%E5%A6%B9?sort=released_at&page={0}'.format(high_index)
 
-    #         url_list = [tokey_url, high_url]
-    #         for url in url_list:
-    #             headers = {
-    #                 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
-    #             }
-    #             page = SessionPage(timeout=5)
-    #             page.get(url=url, headers=headers)
+            url_list = [tokey_url, high_url]
+            for url in url_list:
+                headers = {
+                    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36',
+                }
+                page = SessionPage(timeout=5)
+                page.get(url=url, headers=headers)
 
-    #             for _ in range(2):
-    #                 num_vid = random.randint(1, 11)        
-    #                 name_list = page.eles('xpath://div[contains(@class,"my-2")]/a/text()')[num_vid].strip()
-    #                 name_list = name_list.replace(",", "-")
-    #                 url_list = page.eles('xpath://div[contains(@class,"my-2")]/a/@href')[num_vid].strip()
+                for _ in range(2):
+                    num_vid = random.randint(1, 11)        
+                    name_list = page.eles('xpath://div[contains(@class,"my-2")]/a/text()')[num_vid].strip()
+                    name_list = name_list.replace(",", "-")
+                    url_list = page.eles('xpath://div[contains(@class,"my-2")]/a/@href')[num_vid].strip()
                     
-    #                 if url_list:
-    #                     if url == tokey_url:
-    #                         f_url =  get_addr(base_url, url_list) + ',#genre#=东京'
-    #                     elif url == high_url:
-    #                         f_url =  get_addr(base_url, url_list) + ',#genre#=高妹'
-    #                     data_list.append(f'{name_list}, {f_url}')
-    #                     # print(name_list + ',' + f_url)
-    # except Exception as e:
-    #     print('miss错误' + e)
+                    if url_list:
+                        if url == tokey_url:
+                            f_url =  get_addr(base_url, url_list) + ',#genre#=东京'
+                        elif url == high_url:
+                            f_url =  get_addr(base_url, url_list) + ',#genre#=高妹'
+                        data_list.append(f'{name_list}, {f_url}')
+                        # print(name_list + ',' + f_url)
+    except Exception as e:
+        print('miss错误' + e)
 
     # 添加pig列表============================================
     try:
