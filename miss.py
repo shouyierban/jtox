@@ -322,8 +322,6 @@ def miss_main(proxy_url, wh_url, chat_id, pl_url, de_url):
     with ThreadPoolExecutor(max_workers=4) as pool:
         tasks = [
             pool.submit(addr_miss, data_list, proxy_url),
-            pool.submit(addr_pig, data_list, pl_url),
-            pool.submit(addr_18tv, data_list, de_url),
             pool.submit(addr_grate, data_list),
         ]
 
