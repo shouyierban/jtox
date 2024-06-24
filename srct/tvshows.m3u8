@@ -1,155 +1,155 @@
 #EXTM3U x-tvg-url="http://epg.51zmt.top:8000/e.xml"
 #EXTINF:-1 group-title="Local" tvg-name="重庆新闻_HD" tvg-logo="https://live.zhoujie218.top/taibiao/重庆新闻.png",重庆新闻_HD
-http://27.11.58.231:8003/udp/225.0.4.188:7980
+http://113.206.187.227:55555/udp/225.0.4.188:7980
 #EXTINF:-1 group-title="Local" tvg-name="重庆社会与法_HD" tvg-logo="https://live.zhoujie218.top/taibiao/重庆社会与法.png",重庆社会与法_HD
-http://27.11.58.231:8003/udp/225.0.4.190:7980
+http://113.206.187.227:55555/udp/225.0.4.190:7980
 #EXTINF:-1 group-title="Local" tvg-name="重庆少儿_HD" tvg-logo="https://live.zhoujie218.top/taibiao/重庆少儿.png",重庆少儿_HD
-http://27.11.58.231:8003/udp/225.0.4.191:7980
+http://113.206.187.227:55555/udp/225.0.4.191:7980
 #EXTINF:-1 group-title="Local" tvg-name="重庆影视_HD" tvg-logo="https://live.zhoujie218.top/taibiao/重庆影视.png",重庆影视_HD
-http://27.11.58.231:8003/udp/225.0.4.192:7980
+http://113.206.187.227:55555/udp/225.0.4.192:7980
 #EXTINF:-1 group-title="Local" tvg-name="重庆科教_HD" tvg-logo="https://live.zhoujie218.top/taibiao/重庆科教.png",重庆科教_HD
-http://27.11.58.231:8003/udp/225.0.4.193:7980
+http://113.206.187.227:55555/udp/225.0.4.193:7980
 #EXTINF:-1 group-title="Local" tvg-name="重庆娱乐_HD" tvg-logo="https://live.zhoujie218.top/taibiao/重庆娱乐.png",重庆娱乐_HD
-http://27.11.58.231:8003/udp/225.0.4.194:7980
+http://113.206.187.227:55555/udp/225.0.4.194:7980
 #EXTINF:-1 group-title="Local" tvg-name="重庆汽摩_HD" tvg-logo="https://live.zhoujie218.top/taibiao/重庆汽摩.png",重庆汽摩_HD
-http://27.11.58.231:8003/udp/225.0.4.195:7980
+http://113.206.187.227:55555/udp/225.0.4.195:7980
 #EXTINF:-1 group-title="Local" tvg-name="重庆时尚生活_HD" tvg-logo="https://live.zhoujie218.top/taibiao/重庆时尚生活.png",重庆时尚生活_HD
-http://27.11.58.231:8003/udp/225.0.4.196:7980
+http://113.206.187.227:55555/udp/225.0.4.196:7980
 #EXTINF:-1 group-title="Local" tvg-name="重庆新农村_HD" tvg-logo="https://live.zhoujie218.top/taibiao/重庆新农村.png",重庆新农村_HD
-http://27.11.58.231:8003/udp/225.0.4.189:7980
+http://113.206.187.227:55555/udp/225.0.4.189:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CQTV移动_HD" tvg-logo="https://live.zhoujie218.top/taibiao/CQTV移动.png",CQTV移动_HD
-http://27.11.58.231:8003/udp/225.0.4.215:7980
+http://113.206.187.227:55555/udp/225.0.4.215:7980
 #EXTINF:-1 group-title="Local" tvg-name="时尚购物_HD" tvg-logo="https://live.zhoujie218.top/taibiao/时尚购物.png",时尚购物_HD
-http://27.11.58.231:8003/udp/225.0.4.198:7980
+http://113.206.187.227:55555/udp/225.0.4.198:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV1" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV1.png",CCTV1
-http://27.11.58.231:8003/udp/225.0.4.74:7980
+http://113.206.187.227:55555/udp/225.0.4.74:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV2" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV2.png",CCTV2
-http://27.11.58.231:8003/udp/225.0.4.132:7980
+http://113.206.187.227:55555/udp/225.0.4.132:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV3" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV3.png",CCTV3
-http://27.11.58.231:8003/udp/225.0.4.142:7980
+http://113.206.187.227:55555/udp/225.0.4.142:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV4" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV4.png",CCTV4
-http://27.11.58.231:8003/udp/225.0.4.176:7980
+http://113.206.187.227:55555/udp/225.0.4.176:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV5" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV5.png",CCTV5
-http://27.11.58.231:8003/udp/225.0.4.143:7980
+http://113.206.187.227:55555/udp/225.0.4.143:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV5+" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV5+.png",CCTV5+
-http://27.11.58.231:8003/udp/225.0.4.73:7980
+http://113.206.187.227:55555/udp/225.0.4.73:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV6" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV6.png",CCTV6
-http://27.11.58.231:8003/udp/225.0.4.144:7980
+http://113.206.187.227:55555/udp/225.0.4.144:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV7" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV7.png",CCTV7
-http://27.11.58.231:8003/udp/225.0.4.127:7980
+http://113.206.187.227:55555/udp/225.0.4.127:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV8" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV8.png",CCTV8
-http://27.11.58.231:8003/udp/225.0.4.137:7980
+http://113.206.187.227:55555/udp/225.0.4.137:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV9" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV9.png",CCTV9
-http://27.11.58.231:8003/udp/225.0.4.131:7980
+http://113.206.187.227:55555/udp/225.0.4.131:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV10" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV10.png",CCTV10
-http://27.11.58.231:8003/udp/225.0.4.130:7980
+http://113.206.187.227:55555/udp/225.0.4.130:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV11" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV11.png",CCTV11
-http://27.11.58.231:8003/udp/225.0.4.218:7980
+http://113.206.187.227:55555/udp/225.0.4.218:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV12" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV12.png",CCTV12
-http://27.11.58.231:8003/udp/225.0.4.129:7980
+http://113.206.187.227:55555/udp/225.0.4.129:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV13" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV13.png",CCTV13
-http://27.11.58.231:8003/udp/225.0.4.219:7980
+http://113.206.187.227:55555/udp/225.0.4.219:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV14" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV14.png",CCTV14
-http://27.11.58.231:8003/udp/225.0.4.128:7980
+http://113.206.187.227:55555/udp/225.0.4.128:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV15" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV15.png",CCTV15
-http://27.11.58.231:8003/udp/225.0.4.220:7980
+http://113.206.187.227:55555/udp/225.0.4.220:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CCTV17" tvg-logo="https://live.zhoujie218.top/taibiao/CCTV17.png",CCTV17
-http://27.11.58.231:8003/udp/225.0.4.179:7980
+http://113.206.187.227:55555/udp/225.0.4.179:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CGTN" tvg-logo="https://live.zhoujie218.top/taibiao/CGTN.png",CGTN
-http://27.11.58.231:8003/udp/225.0.4.12:7980
+http://113.206.187.227:55555/udp/225.0.4.12:7980
 #EXTINF:-1 group-title="Local" tvg-name="湖南卫视" tvg-logo="https://live.zhoujie218.top/taibiao/湖南卫视.png",湖南卫视
-http://27.11.58.231:8003/udp/225.0.4.75:7980
+http://113.206.187.227:55555/udp/225.0.4.75:7980
 #EXTINF:-1 group-title="Local" tvg-name="浙江卫视" tvg-logo="https://live.zhoujie218.top/taibiao/浙江卫视.png",浙江卫视
-http://27.11.58.231:8003/udp/225.0.4.81:7980
+http://113.206.187.227:55555/udp/225.0.4.81:7980
 #EXTINF:-1 group-title="Local" tvg-name="江苏卫视" tvg-logo="https://live.zhoujie218.top/taibiao/江苏卫视.png",江苏卫视
-http://27.11.58.231:8003/udp/225.0.4.79:7980
+http://113.206.187.227:55555/udp/225.0.4.79:7980
 #EXTINF:-1 group-title="Local" tvg-name="安徽卫视" tvg-logo="https://live.zhoujie218.top/taibiao/安徽卫视.png",安徽卫视
-http://27.11.58.231:8003/udp/225.0.4.133:7980
+http://113.206.187.227:55555/udp/225.0.4.133:7980
 #EXTINF:-1 group-title="Local" tvg-name="广东卫视" tvg-logo="https://live.zhoujie218.top/taibiao/广东卫视.png",广东卫视
-http://27.11.58.231:8003/udp/225.0.4.84:7980
+http://113.206.187.227:55555/udp/225.0.4.84:7980
 #EXTINF:-1 group-title="Local" tvg-name="北京卫视" tvg-logo="https://live.zhoujie218.top/taibiao/北京卫视.png",北京卫视
-http://27.11.58.231:8003/udp/225.0.4.78:7980
+http://113.206.187.227:55555/udp/225.0.4.78:7980
 #EXTINF:-1 group-title="Local" tvg-name="天津卫视" tvg-logo="https://live.zhoujie218.top/taibiao/天津卫视.png",天津卫视
-http://27.11.58.231:8003/udp/225.0.4.82:7980
+http://113.206.187.227:55555/udp/225.0.4.82:7980
 #EXTINF:-1 group-title="Local" tvg-name="辽宁卫视" tvg-logo="https://live.zhoujie218.top/taibiao/辽宁卫视.png",辽宁卫视
-http://27.11.58.231:8003/udp/225.0.4.98:7980
+http://113.206.187.227:55555/udp/225.0.4.98:7980
 #EXTINF:-1 group-title="Local" tvg-name="东方卫视" tvg-logo="https://live.zhoujie218.top/taibiao/东方卫视.png",东方卫视
-http://27.11.58.231:8003/udp/225.0.4.80:7980
+http://113.206.187.227:55555/udp/225.0.4.80:7980
 #EXTINF:-1 group-title="Local" tvg-name="纪实_HD" tvg-logo="https://live.zhoujie218.top/taibiao/纪实.png",纪实_HD
-http://27.11.58.231:8003/udp/225.0.4.99:7980
+http://113.206.187.227:55555/udp/225.0.4.99:7980
 #EXTINF:-1 group-title="Local" tvg-name="河北卫视" tvg-logo="https://live.zhoujie218.top/taibiao/河北卫视.png",河北卫视
-http://27.11.58.231:8003/udp/225.0.4.174:7980
+http://113.206.187.227:55555/udp/225.0.4.174:7980
 #EXTINF:-1 group-title="Local" tvg-name="贵州卫视" tvg-logo="https://live.zhoujie218.top/taibiao/贵州卫视.png",贵州卫视
-http://27.11.58.231:8003/udp/225.0.4.175:7980
+http://113.206.187.227:55555/udp/225.0.4.175:7980
 #EXTINF:-1 group-title="Local" tvg-name="山东卫视" tvg-logo="https://live.zhoujie218.top/taibiao/山东卫视.png",山东卫视
-http://27.11.58.231:8003/udp/225.0.4.199:7980
+http://113.206.187.227:55555/udp/225.0.4.199:7980
 #EXTINF:-1 group-title="Local" tvg-name="东南卫视" tvg-logo="https://live.zhoujie218.top/taibiao/东南卫视.png",东南卫视
-http://27.11.58.231:8003/udp/225.0.4.200:7980
+http://113.206.187.227:55555/udp/225.0.4.200:7980
 #EXTINF:-1 group-title="Local" tvg-name="黑龙江卫视" tvg-logo="https://live.zhoujie218.top/taibiao/黑龙江卫视.png",黑龙江卫视
-http://27.11.58.231:8003/udp/225.0.4.201:7980
+http://113.206.187.227:55555/udp/225.0.4.201:7980
 #EXTINF:-1 group-title="Local" tvg-name="深圳卫视" tvg-logo="https://live.zhoujie218.top/taibiao/深圳卫视.png",深圳卫视
-http://27.11.58.231:8003/udp/225.0.4.202:7980
+http://113.206.187.227:55555/udp/225.0.4.202:7980
 #EXTINF:-1 group-title="Local" tvg-name="江西卫视" tvg-logo="https://live.zhoujie218.top/taibiao/江西卫视.png",江西卫视
-http://27.11.58.231:8003/udp/225.0.4.203:7980
+http://113.206.187.227:55555/udp/225.0.4.203:7980
 #EXTINF:-1 group-title="Local" tvg-name="四川卫视" tvg-logo="https://live.zhoujie218.top/taibiao/四川卫视.png",四川卫视
-http://27.11.58.231:8003/udp/225.0.4.204:7980
+http://113.206.187.227:55555/udp/225.0.4.204:7980
 #EXTINF:-1 group-title="Local" tvg-name="重庆卫视" tvg-logo="https://live.zhoujie218.top/taibiao/重庆卫视.png",重庆卫视
-http://27.11.58.231:8003/udp/225.0.4.187:7980
+http://113.206.187.227:55555/udp/225.0.4.187:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CQTV新闻" tvg-logo="https://live.zhoujie218.top/taibiao/CQTV新闻.png",CQTV新闻
-http://27.11.58.231:8003/udp/225.0.4.59:7980
+http://113.206.187.227:55555/udp/225.0.4.59:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CQTV汽摩" tvg-logo="https://live.zhoujie218.top/taibiao/CQTV汽摩.png",CQTV汽摩
-http://27.11.58.231:8003/udp/225.0.4.61:7980
+http://113.206.187.227:55555/udp/225.0.4.61:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CQTV影视" tvg-logo="https://live.zhoujie218.top/taibiao/CQTV影视.png",CQTV影视
-http://27.11.58.231:8003/udp/225.0.4.62:7980
+http://113.206.187.227:55555/udp/225.0.4.62:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CQTV科教" tvg-logo="https://live.zhoujie218.top/taibiao/CQTV科教.png",CQTV科教
-http://27.11.58.231:8003/udp/225.0.4.63:7980
+http://113.206.187.227:55555/udp/225.0.4.63:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CQTV社会与法" tvg-logo="https://live.zhoujie218.top/taibiao/CQTV社会与法.png",CQTV社会与法
-http://27.11.58.231:8003/udp/225.0.4.64:7980
+http://113.206.187.227:55555/udp/225.0.4.64:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CQTV娱乐" tvg-logo="https://live.zhoujie218.top/taibiao/CQTV娱乐.png",CQTV娱乐
-http://27.11.58.231:8003/udp/225.0.4.65:7980
+http://113.206.187.227:55555/udp/225.0.4.65:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CQTV移动" tvg-logo="https://live.zhoujie218.top/taibiao/CQTV移动.png",CQTV移动
-http://27.11.58.231:8003/udp/225.0.4.68:7980
+http://113.206.187.227:55555/udp/225.0.4.68:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CQTV时尚生活" tvg-logo="https://live.zhoujie218.top/taibiao/CQTV时尚生活.png",CQTV时尚生活
-http://27.11.58.231:8003/udp/225.0.4.69:7980
+http://113.206.187.227:55555/udp/225.0.4.69:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CQTV新农村" tvg-logo="https://live.zhoujie218.top/taibiao/CQTV新农村.png",CQTV新农村
-http://27.11.58.231:8003/udp/225.0.4.70:7980
+http://113.206.187.227:55555/udp/225.0.4.70:7980
 #EXTINF:-1 group-title="CCTV" tvg-name="CQTV少儿" tvg-logo="https://live.zhoujie218.top/taibiao/CQTV少儿.png",CQTV少儿
-http://27.11.58.231:8003/udp/225.0.4.71:7980
+http://113.206.187.227:55555/udp/225.0.4.71:7980
 #EXTINF:-1 group-title="Local" tvg-name="爱生活" tvg-logo="https://live.zhoujie218.top/taibiao/爱生活.png",爱生活
-http://27.11.58.231:8003/udp/225.0.4.164:7980
+http://113.206.187.227:55555/udp/225.0.4.164:7980
 #EXTINF:-1 group-title="Local" tvg-name="IPTV相声小品" tvg-logo="https://live.zhoujie218.top/taibiao/IPTV相声小品.png",IPTV相声小品
-http://27.11.58.231:8003/udp/225.0.4.56:7980
+http://113.206.187.227:55555/udp/225.0.4.56:7980
 #EXTINF:-1 group-title="Local" tvg-name="IPTV野外" tvg-logo="https://live.zhoujie218.top/taibiao/IPTV野外.png",IPTV野外
-http://27.11.58.231:8003/udp/225.0.4.57:7980
+http://113.206.187.227:55555/udp/225.0.4.57:7980
 #EXTINF:-1 group-title="Local" tvg-name="IPTV3+" tvg-logo="https://live.zhoujie218.top/taibiao/IPTV3+.png",IPTV3+
-http://27.11.58.231:8003/udp/225.0.4.51:7980
+http://113.206.187.227:55555/udp/225.0.4.51:7980
 #EXTINF:-1 group-title="Local" tvg-name="IPTV5+" tvg-logo="https://live.zhoujie218.top/taibiao/IPTV5+.png",IPTV5+
-http://27.11.58.231:8003/udp/225.0.4.53:7980
+http://113.206.187.227:55555/udp/225.0.4.53:7980
 #EXTINF:-1 group-title="Local" tvg-name="IPTV6+" tvg-logo="https://live.zhoujie218.top/taibiao/IPTV6+.png",IPTV6+
-http://27.11.58.231:8003/udp/225.0.4.50:7980
+http://113.206.187.227:55555/udp/225.0.4.50:7980
 #EXTINF:-1 group-title="Local" tvg-name="IPTV8+" tvg-logo="https://live.zhoujie218.top/taibiao/IPTV8+.png",IPTV8+
-http://27.11.58.231:8003/udp/225.0.4.54:7980
+http://113.206.187.227:55555/udp/225.0.4.54:7980
 #EXTINF:-1 group-title="Local" tvg-name="经典电影" tvg-logo="https://live.zhoujie218.top/taibiao/经典电影.png",经典电影
-http://27.11.58.231:8003/udp/225.0.4.48:7980
+http://113.206.187.227:55555/udp/225.0.4.48:7980
 #EXTINF:-1 group-title="Local" tvg-name="解密" tvg-logo="https://live.zhoujie218.top/taibiao/解密.png",解密
-http://27.11.58.231:8003/udp/225.0.4.153:7980
+http://113.206.187.227:55555/udp/225.0.4.153:7980
 #EXTINF:-1 group-title="Local" tvg-name="全纪实" tvg-logo="https://live.zhoujie218.top/taibiao/全纪实.png",全纪实
-http://27.11.58.231:8003/udp/225.0.4.113:7980
+http://113.206.187.227:55555/udp/225.0.4.113:7980
 #EXTINF:-1 group-title="Local" tvg-name="纪实_HD" tvg-logo="https://live.zhoujie218.top/taibiao/纪实.png",纪实_HD
-http://27.11.58.231:8003/udp/225.0.4.99:7980
+http://113.206.187.227:55555/udp/225.0.4.99:7980
 #EXTINF:-1 group-title="Local" tvg-name="地理" tvg-logo="https://live.zhoujie218.top/taibiao/地理.png",地理
-http://27.11.58.231:8003/udp/225.0.4.149:7980
+http://113.206.187.227:55555/udp/225.0.4.149:7980
 #EXTINF:-1 group-title="Local" tvg-name="古装剧场" tvg-logo="https://live.zhoujie218.top/taibiao/古装剧场.png",古装剧场
-http://27.11.58.231:8003/udp/225.0.4.147:7980
+http://113.206.187.227:55555/udp/225.0.4.147:7980
 #EXTINF:-1 group-title="Local" tvg-name="武侠剧场" tvg-logo="https://live.zhoujie218.top/taibiao/武侠剧场.png",武侠剧场
-http://27.11.58.231:8003/udp/225.0.4.168:7980
+http://113.206.187.227:55555/udp/225.0.4.168:7980
 #EXTINF:-1 group-title="Local" tvg-name="军旅剧场" tvg-logo="https://live.zhoujie218.top/taibiao/军旅剧场.png",军旅剧场
-http://27.11.58.231:8003/udp/225.0.4.146:7980
+http://113.206.187.227:55555/udp/225.0.4.146:7980
 #EXTINF:-1 group-title="Local" tvg-name="喜剧影院" tvg-logo="https://live.zhoujie218.top/taibiao/喜剧影院.png",喜剧影院
-http://27.11.58.231:8003/udp/225.0.4.169:7980
+http://113.206.187.227:55555/udp/225.0.4.169:7980
 #EXTINF:-1 group-title="Local" tvg-name="动作影院" tvg-logo="https://live.zhoujie218.top/taibiao/动作影院.png",动作影院
-http://27.11.58.231:8003/udp/225.0.4.170:7980
+http://113.206.187.227:55555/udp/225.0.4.170:7980
 #EXTINF:-1 group-title="Local" tvg-name="家庭影院" tvg-logo="https://live.zhoujie218.top/taibiao/家庭影院.png",家庭影院
-http://27.11.58.231:8003/udp/225.0.4.171:7980
+http://113.206.187.227:55555/udp/225.0.4.171:7980
 #EXTINF:-1 group-title="Local" tvg-name="星影" tvg-logo="https://live.zhoujie218.top/taibiao/星影.png",星影
-http://27.11.58.231:8003/udp/225.0.4.172:7980
+http://113.206.187.227:55555/udp/225.0.4.172:7980
