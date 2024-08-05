@@ -80,8 +80,8 @@ def pig_list(pl_url):
     for p = 1, 6 do
         for i = 1, 2 do
         local ram_num = math.random(1,20)
-        local page_list = splash:select('#post-514045 > div > div > section > div > div > div > div > div > section > div > div > article:nth-child(' .. ram_num .. ') > div.content > div > h2 > a'):text()
-        local page_url = splash:select('#post-514045 > div > div > section > div > div > div > div > div > section > div > div > article:nth-child(' .. ram_num .. ') > div.content > div > h2 > a'):info()["attributes"]["href"]
+        local page_list = splash:select('#post-235997 > div > div > section > div > div > div > div > div > section > div > div > article:nth-child(' .. ram_num .. ') > div.content > div > h2 > a'):text()
+        local page_url = splash:select('#post-235997 > div > div > section > div > div > div > div > div > section > div > div > article:nth-child(' .. ram_num .. ') > div.content > div > h2 > a'):info()["attributes"]["href"]
         local data_info = {{
             name = page_list,
             purl = page_url
