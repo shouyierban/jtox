@@ -177,7 +177,7 @@ def z_list(proxy, page):
 
 
 def jrate():
-    page_num = random.randint(31, 58)
+    page_num = random.randint(31, 60)
     r_url = "https://www.javrate.com/menu/uncensored/5-2-{0}".format(page_num)
 
     headers = {
@@ -191,7 +191,7 @@ def jrate():
     r_name = page.eles('xpath://div[contains(@class, "col-md-4")]/div[2]/a/text()')
     page_url = page.eles("t:div@@class:col-md-4")
     data = []
-    for _ in range(3):
+    for _ in range(4):
         vadio_num = random.randint(1, 19)
         f_name = r_name[vadio_num].replace(";", "").strip()
         f_name = f_name.replace(":", "")
@@ -321,7 +321,7 @@ def miss_main(proxy_url, wh_url, chat_id, pl_url, de_url):
 
     with ThreadPoolExecutor(max_workers=4) as pool:
         tasks = [
-            pool.submit(addr_miss, data_list, proxy_url),
+            pool.submit(addr_18tv, data_list, de_url),
             pool.submit(addr_grate, data_list),
         ]
 
