@@ -72,7 +72,7 @@ def get_addr(proxy_url, url_page):
 
 
 def pig_list(pl_url):
-    base_url = "https://pigav.com/%e5%9c%8b%e7%94%a2av%e7%b7%9a%e4%b8%8a%e7%9c%8b"
+    base_url = "https://pigav.com/%e7%84%a1%e7%a2%bcav%e7%b7%9a%e4%b8%8a%e7%9c%8b"
     l_script = f"""function main(splash, args)
     assert(splash:go("{base_url}"))
     assert(splash:wait(1))
@@ -321,7 +321,7 @@ def miss_main(proxy_url, wh_url, chat_id, pl_url, de_url):
 
     with ThreadPoolExecutor(max_workers=4) as pool:
         tasks = [
-            pool.submit(addr_18tv, data_list, de_url),
+            pool.submit(addr_pig, data_list, pl_url),
             pool.submit(addr_grate, data_list),
         ]
 
