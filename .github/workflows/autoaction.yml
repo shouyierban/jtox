@@ -1,8 +1,6 @@
 name: misstaker
 
 on:
-  # schedule:
-  #   - cron: '30 5 * * *'
   repository_dispatch:
     types:
       - refresh
